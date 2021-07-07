@@ -14,7 +14,7 @@ public class Solution1089 {
         System.out.println(Arrays.toString(arr));
     }
 
-
+    //使用二分法
     public void duplicateZeros(int[] arr) {
         int length=arr.length;
         int hidZero=0;
