@@ -15,8 +15,7 @@ public class Solution658 {
         List<Integer> closestElements = findClosestElements(arr, 5, 9);
         System.out.println(closestElements);
     }
-
-
+        //
     public List<Integer> findClosestElements(int[] arr, int k, int x) {
         List<Integer>answ=new LinkedList<>();
         if (x<=arr[0])
