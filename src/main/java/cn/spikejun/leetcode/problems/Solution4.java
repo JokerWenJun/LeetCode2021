@@ -63,6 +63,7 @@ public class Solution4 {
                 return Math.min(nums1[index1],nums2[index2]);
             }
             //进行正常判断
+            //这个hlaf取的太妙了，大一点都不行，少一点又会增加时间的复杂度
             int half=k/2;
             int newIndex1=Math.min(length1-1,index1+half-1);
             int newIndex2=Math.min(length2-1,index2+half-1);
