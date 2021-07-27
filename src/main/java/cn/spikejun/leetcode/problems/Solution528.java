@@ -18,7 +18,6 @@ public class Solution528 {
     public int pickIndex() {
         int total=preFix[preFix.length-1];
         int anInt = random.nextInt(total);
-        //
         int left=0;
         int right=preFix.length-1;
         while (left<right)
