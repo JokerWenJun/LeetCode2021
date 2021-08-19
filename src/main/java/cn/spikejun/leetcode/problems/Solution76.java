@@ -102,3 +102,12 @@ public class Solution76 {
          return true;
      }
 }
+/**
+ * s = "ADOBECODEBANC", t = "ABC"
+ *
+ *
+ * ADOBEC ODEBANC
+ * A DOBEC ODEBANC
+ * need
+ *
+ */

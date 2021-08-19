@@ -62,7 +62,15 @@ public class Solution975 {
             }
         });
         fillTheEachNumberOfNext(evenNext,copyArr);
+        /**
+         * 两个数组
+         * 统计每一个数分别进行odd 和 even跳 ->index
+         */
+
+
+
         boolean[]odds=new boolean[length];
+
         boolean[]evens=new boolean[length];
         //最后一位无论是奇数还是偶数都可以
         odds[length-1]=true;
@@ -87,6 +95,10 @@ public class Solution975 {
         return answ;
     }
 
+    //10 12 13 14  15
+    //0  2  1  3  4
+    //15 14 13 12 10
+    //4  3  1   2  0
     private void fillTheEachNumberOfNext(int[] oddNext, int[][] copyArr) {
         //最开始初始化,代表每一个数字后续都没有
         Arrays.fill(oddNext,-1);
