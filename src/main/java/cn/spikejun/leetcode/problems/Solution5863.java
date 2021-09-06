@@ -9,37 +9,19 @@ public class Solution5863 {
     public void test()
     {
         int[]arr=new int[]{3,3,6,4,5};
-        int i = countQuadruplets(arr);
-        System.out.println(i);
+        System.out.println(firstDayBeenInAllRooms(arr));
     }
-    private int count=0;
-    public int countQuadruplets(int[] nums) {
-        if (nums.length<4)
-        {
-            return 0;
-        }
-        for (int i = 3; i < nums.length; i++) {
-            dfs(nums[i],i,3,nums);
-        }
-        return count;
-    }
+    public int firstDayBeenInAllRooms(int[] nextVisit) {
+        long[] dp = new long[nextVisit.length+1];
+        int mod = 1000000007;
+        for (int i = 0; i < nextVisit.length; i++) {
 
-    private void dfs(int num, int startLocation, int size,int []arr) {
-        if (size==0&&num==0)
-        {
-            count++;
-            return;
-        }
-        if (size==0&&num!=0)
-        {
-            return;
-        }
-        for (int i = startLocation-1; i>=0; i--) {
-            if (num-arr[i]<0)
-            {
-                continue;
+            if (nextVisit[i] == i) {
+                dp[i+1] = (dp[i] + 2+mod) % mod;
+            } else {
+                dp[i+1] = (2 * dp[i] - dp[nextVisit[i]] + 2+mod ) % mod;
             }
-            dfs(num-arr[i],i,size-1,arr);
         }
+        return (int)dp[dp.length-2];
     }
 }
