@@ -8,10 +8,15 @@ import java.util.List;
 
 public class Solution68 {
 
+    /**
+     * ["What","must","be","acknowledgment","shall","be"]
+     * 16
+     */
+
     @Test
     public void test()
     {
-        String[]words=new String[]{"This", "is", "an", "example", "of", "text", "justification."};
+        String[]words=new String[]{"What","must","be","acknowledgment","shall","be"};
 
 //        int[]arr=new int[]{1,3,5,2,11};
 //        Arrays.sort(arr);
@@ -92,7 +97,8 @@ public class Solution68 {
     }
 
     private String addSpaceIntoEachRowStr(String connect, int maxWidth) {
-        for (int i=0;i<maxWidth-connect.length();i++)
+        int length = maxWidth - connect.length();
+        for (int i=0;i<length;i++)
         {
             connect=connect+" ";
         }
@@ -104,7 +110,7 @@ public class Solution68 {
         stringBuffer.append(words[left]);
         for (int i = left+1; i < right; i++) {
             stringBuffer.append(space);
-            stringBuffer.append(words[right]);
+            stringBuffer.append(words[i]);
         }
         return stringBuffer.toString();
     }
